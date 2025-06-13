@@ -9,6 +9,7 @@ import {
   Maximize,
   Star,
 } from "lucide-react";
+import { motion } from "motion/react";
 
 export const ApartmentDetail = () => {
   const {
@@ -75,7 +76,12 @@ export const ApartmentDetail = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", bounce: 0 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+        >
           {/* Layout Image */}
           <div className="space-y-6">
             <div className="relative overflow-hidden rounded-2xl shadow-xl">
@@ -193,7 +199,7 @@ export const ApartmentDetail = () => {
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

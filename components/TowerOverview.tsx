@@ -2,6 +2,7 @@ import { towers } from "data/mockData";
 import { TowerCard } from "./TowerCard";
 import { Building2 } from "lucide-react";
 import { useTowerViewStore } from "hooks/useTowerViewStore";
+import { motion } from "motion/react";
 
 export const TowerOverview = () => {
   const state = useTowerViewStore();
@@ -24,7 +25,12 @@ export const TowerOverview = () => {
         </div>
 
         {/* Tower Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", bounce: 0 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {towers.map((tower, i) => (
             <TowerCard
               key={i}
@@ -32,7 +38,7 @@ export const TowerOverview = () => {
               onTowerSelect={() => state.selectTower(tower)}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </main>
   );

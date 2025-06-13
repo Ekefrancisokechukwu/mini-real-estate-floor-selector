@@ -3,6 +3,7 @@ import { ArrowLeft, Building2 } from "lucide-react";
 import { FloorCard } from "./FloorCard";
 import { dataFloors } from "data/mockData";
 import type { Tower } from "types";
+import { motion } from "motion/react";
 
 export const FloorView = () => {
   const { selectedTower, selectFloor, setbackToTowers } = useTowerViewStore();
@@ -12,7 +13,7 @@ export const FloorView = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8 px-4">
+    <div className="min-h-screen  bg-gradient-to-br from-slate-50 to-blue-50 py-8 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -34,7 +35,7 @@ export const FloorView = () => {
         </div>
 
         {/* Floors Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-5 gap-4">
           {floors.map((floor, i) => {
             const availableUnits = floor.apartments.filter(
               (apt) => apt.status === "available"

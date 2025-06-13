@@ -1,6 +1,7 @@
 import { useTowerViewStore } from "hooks/useTowerViewStore";
-import { Bath, Bed, CheckCircle, Clock, Maximize, XCircle } from "lucide-react";
-import type { Apartment, Status } from "types";
+import { getStatusIcon } from "lib/helper";
+import { Bath, Bed, Maximize } from "lucide-react";
+import type { Apartment } from "types";
 
 interface ApartmentCardProps {
   apartment: Apartment;
@@ -8,20 +9,6 @@ interface ApartmentCardProps {
 
 export const ApartmentCard = ({ apartment }: ApartmentCardProps) => {
   const selectApartment = useTowerViewStore().selectApartment;
-
-  const getStatusIcon = (status: Status) => {
-    switch (status) {
-      case "available":
-        return <CheckCircle className="w-4 h-4" />;
-      case "sold":
-        return <XCircle className="w-4 h-4" />;
-      case "reserved":
-        return <Clock className="w-4 h-4" />;
-
-      default:
-        return null;
-    }
-  };
 
   const getStatusColor = (status: string) => {
     switch (status) {

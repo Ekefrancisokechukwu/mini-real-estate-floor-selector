@@ -1,6 +1,22 @@
 import { useTowerViewStore } from "hooks/useTowerViewStore";
 import { ArrowLeft, Home } from "lucide-react";
 import { ApartmentCard } from "./ApartmentCard";
+import { motion } from "motion/react";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
 
 export const ApartmentView = () => {
   const { selectedFloor, selectedTower, setbackToFloors } = useTowerViewStore();
@@ -32,11 +48,24 @@ export const ApartmentView = () => {
         </div>
 
         {/* Apartments Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6"
+        >
           {selectedFloor?.apartments.map((apt, i) => {
-            return <ApartmentCard key={i} apartment={apt} />;
+            return (
+              <motion.div
+                key={i}
+                variants={childVariants}
+                transition={{ type: "spring", bounce: 0 }}
+              >
+                <ApartmentCard apartment={apt} />{" "}
+              </motion.div>
+            );
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
