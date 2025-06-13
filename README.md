@@ -1,87 +1,37 @@
-# Welcome to React Router!
+# Mini Real Estate Floor Selector
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A simplified React-based prototype for an interactive real estate frontend that allows users to explore towers, select floors, and view apartment layouts with a responsive and engaging UI.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
+
+## Project Overview
+
+The Mini Real Estate Floor Selector is a prototype for a real estate application where users can:
+
+- Browse three towers (e.g., Tower A, B, C).
+- Select a floor from a list of 10–15 floors.
+- View 3–4 apartment layouts per floor with thumbnail images and metadata (area, unit type, room count,Bathrooms).
+- See a detailed view of a selected apartment layout.
+- Experience a smooth hover/tap interaction for apartment thumbnails.
+
+The project is built with React and uses dummy data for towers, floors, and apartments. It’s designed to be responsive and user-friendly on both desktop and mobile devices.
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+- **Tower Overview**: Displays three clickable tower cards (Tower A, B, C).
+- **Floor Selection**: Lists 10–15 floors for the selected tower, with clickable floor cards.
+- **Apartment Layouts**: Shows 3–4 apartment layouts per floor, each with:
+  - Thumbnail image (placeholder).
+  - Metadata: area (e.g., 800 sq ft), unit type (e.g., 2BHK), room count (e.g., 2 bedrooms).
+- **Detailed Layout View**: Displays a larger image and full metadata for a selected apartment.
+- **Navigation**: Smooth navigation between views with a back button.
+- **Responsive Design**: Works seamlessly on desktop and mobile devices.
+- **Bonus Interaction**: Hovering (or tapping on mobile) over an apartment thumbnail scales it up slightly and darkens the background with a smooth animation.
