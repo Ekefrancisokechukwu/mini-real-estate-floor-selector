@@ -1,37 +1,77 @@
-# Mini Real Estate Floor Selector
+# 🏢 Mini Real Estate Floor Selector
 
-A simplified React-based prototype for an interactive real estate frontend that allows users to explore towers, select floors, and view apartment layouts with a responsive and engaging UI.
+An interactive prototype that simulates navigating through a real estate project — from choosing a tower, selecting a floor, browsing apartment layouts, and viewing full layout details.
 
-## Table of Contents
+---
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Technologies Used](#technologies-used)
+## 🚀 Features
 
-## Project Overview
+- **Tower Selection**: Choose between Tower A, B, or C.
+- **Floor Navigation**: View a list of floors (1–15) for each tower.
+- **Apartment Layouts**: Explore 3–4 apartment units per floor with thumbnail, area, unit type, and room count.
+- **Detailed View**: See a full-size layout with full metadata.
+- **Smooth Animations**: Subtle scaling and background dimming on hover/tap using Framer Motion.
+- **Responsive Design**: Works on both desktop and mobile.
 
-The Mini Real Estate Floor Selector is a prototype for a real estate application where users can:
+---
 
-- Browse three towers (e.g., Tower A, B, C).
-- Select a floor from a list of 10–15 floors.
-- View 3–4 apartment layouts per floor with thumbnail images and metadata (area, unit type, room count,Bathrooms).
-- See a detailed view of a selected apartment layout.
-- Experience a smooth hover/tap interaction for apartment thumbnails.
+## 🛠️ Tech Stack
 
-The project is built with React and uses dummy data for towers, floors, and apartments. It’s designed to be responsive and user-friendly on both desktop and mobile devices.
+- **React** – Core frontend framework
+- **TypeScript** – Strongly typed language that compiles to JavaScript
 
-## Features
+- **Tailwind CSS** – Utility-first styling
+- **Framer Motion** – For interactive hover/tap animations
+- **React-Router** – For fast local development
 
-- **Tower Overview**: Displays three clickable tower cards (Tower A, B, C).
-- **Floor Selection**: Lists 10–15 floors for the selected tower, with clickable floor cards.
-- **Apartment Layouts**: Shows 3–4 apartment layouts per floor, each with:
-  - Thumbnail image (placeholder).
-  - Metadata: area (e.g., 800 sq ft), unit type (e.g., 2BHK), room count (e.g., 2 bedrooms).
-- **Detailed Layout View**: Displays a larger image and full metadata for a selected apartment.
-- **Navigation**: Smooth navigation between views with a back button.
-- **Responsive Design**: Works seamlessly on desktop and mobile devices.
-- **Bonus Interaction**: Hovering (or tapping on mobile) over an apartment thumbnail scales it up slightly and darkens the background with a smooth animation.
+---
+
+## 📸 UI Preview
+
+1. **Tower Overview →**
+2. **Floor Selector →**
+3. **Apartment Thumbnails →**
+4. **Apartment Detail View**
+
+## 📁 Project Structure (Simplified)
+
+```text
+mini-estate/
+├── app/
+│ ├── routes/
+│ ├── Welcome/
+│ ├── routes.tsx
+│ ├── app.css
+
+├── components/
+│ ├── ApartmentCard.tsx
+│ ├── ApartmentDetail.tsx
+│ ├── ApartmentView.tsx
+│ ├── FloorCard.tsx
+│ ├── FloorView.tsx
+│ ├── TowerCard.tsx
+│ ├── TowerOverview.tsx
+
+├── data/
+│ └── mockData.ts
+├── hooks/
+│ └── useTowerViewStore.ts
+├── lib/
+│ └── helper.tsx
+├── types/
+│ └── index.ts
+
+
+
+```
+
+---
+
+## ⚠️ Limitations & Tradeoffs
+
+- 🔁 **No backend/data fetching**: All tower, floor, and layout data is hardcoded.
+- 🧭 **No routing (`react-router`)**: Navigation is handled using component state managed by Zustand to simplify the prototype.
+- 🗺️ **No real geolocation/context**: Not integrated with real maps, buildings, or project info.
+- 📱 **Mobile animations**: Tap events simulate hover, but may behave differently on some touch devices.
+
+---
